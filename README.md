@@ -87,16 +87,6 @@ POST /scrape/filter?tag=h1&search_term=Perfeição
     }
   ]
 }
-
-## 🔧 Estrutura do Projeto
-
-```txt
-scraper/
-├── main.py        # Entrada principal - inicia apenas a API
-├── api.py         # API REST simplificada (retorno direto)
-├── scraper.py     # Lógica de scraping com BeautifulSoup
-├── models.py      # Modelos de dados (ScraperResult, etc)
-└── utils.py       # Funções utilitárias
 ```
 
 ## ⚡ Recursos
