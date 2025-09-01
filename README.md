@@ -88,31 +88,6 @@ POST /scrape/filter?tag=h1&search_term=Perfeição
   ]
 }
 
-## 💡 Exemplo Prático - PowerShell
-
-```powershell
-# Fazer scraping direto
-$response = Invoke-RestMethod -Uri "http://127.0.0.1:8000/scrape" -Method Post -ContentType "application/json" -Body '{"url": "https://letras.mus.br/legiao-urbana/46967/", "target_tags": ["h1", "p", "div"], "min_text_length": 10}'
-
-# Dados já estão na resposta!
-Write-Host "Status: $($response.status)"
-Write-Host "URL: $($response.url)" 
-Write-Host "Elementos encontrados: $($response.total_elements)"
-Write-Host "Título: $($response.title)"
-
-# Filtrar elementos por tag específica
-$h1_elements = $response.elements | Where-Object { $_.tag -eq "h1" }
-Write-Host "Elementos H1 encontrados: $($h1_elements.Count)"
-
-# Salvar resultado completo
-$response | ConvertTo-Json -Depth 10 | Out-File "scraping_resultado.json" -Encoding UTF8
-
-# Exemplo com filtros na API
-$filtered_response = Invoke-RestMethod -Uri "http://127.0.0.1:8000/scrape/filter?tag=p&search_term=Perfeição" -Method Post -ContentType "application/json" -Body '{"url": "https://letras.mus.br/legiao-urbana/46967/", "target_tags": ["h1", "p"]}'
-
-Write-Host "Elementos filtrados: $($filtered_response.filtered_total)"
-```
-
 ## 🔧 Estrutura do Projeto
 
 ```txt
