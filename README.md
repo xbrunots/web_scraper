@@ -150,3 +150,32 @@ scraper/
 2. **Acesse a documentação**: <http://127.0.0.1:8000/docs>
 3. **Faça sua primeira requisição** com o endpoint `/scrape`
 4. **Os dados chegam imediatamente** - sem necessidade de consultas adicionais!
+
+## 🌐 Deploy no EasyPanel
+
+Este projeto está pronto para deploy no EasyPanel! Todos os arquivos de configuração estão incluídos:
+
+- ✅ `Dockerfile` - Container otimizado para produção
+- ✅ `docker-compose.yml` - Para teste local
+- ✅ `easypanel.yml` - Configuração específica do EasyPanel
+- ✅ `.dockerignore` - Arquivos ignorados no build
+- ✅ `DEPLOY_EASYPANEL.md` - **Guia completo de deploy**
+
+### Deploy Rápido:
+
+```bash
+# 1. Push para seu repositório
+git add . && git commit -m "Ready for EasyPanel" && git push
+
+# 2. No EasyPanel:
+# - New Project → Import from Git
+# - Selecione o repositório
+# - Configure porta 8000
+# - Deploy automático!
+```
+
+**🔗 Após deploy**: `https://your-app.easypanel.host/docs`
+
+---
+
+**📚 Leia o guia completo**: [`DEPLOY_EASYPANEL.md`](./DEPLOY_EASYPANEL.md)

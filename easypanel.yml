@@ -1,0 +1,30 @@
+# EasyPanel Configuration
+name: web-scraper-api
+type: app
+
+# Build settings
+build:
+  type: dockerfile
+  dockerfile: Dockerfile
+
+# Runtime settings
+runtime:
+  port: 8000
+  env:
+    PYTHONPATH: /app
+    PYTHONUNBUFFERED: "1"
+
+# Resource limits
+resources:
+  memory: 512Mi
+  cpu: 500m
+
+# Health check
+healthCheck:
+  path: /
+  port: 8000
+
+# Auto-scaling (opcional)
+scaling:
+  minReplicas: 1
+  maxReplicas: 3
